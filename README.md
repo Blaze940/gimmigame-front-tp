@@ -2,7 +2,7 @@
 
 Run the server available at `https://github.com/Blaze940/gimmigame-back-tp` and follow the instructions in the README.md file.
 
-# Project Theme
+# Project Theme - GimmiGame
 
 **Plateforme de jeux en ligne**
 Le but du projet est de créer une plateforme de jeux tour par tour en ligne.
@@ -53,9 +53,6 @@ Les actions peuvent être :
   - la demande de confirmation de la touche
   - saisie de texte, avec optionnellement :
   - l’indication du format (regex)
-
-
-# GimmiFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
 
