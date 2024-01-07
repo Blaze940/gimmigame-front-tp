@@ -1,14 +1,31 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import { ThemeService } from "./_services/theme.service";
+import {UserService} from "./_services/user.service";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'gimmigame-front-tp';
+export class AppComponent implements OnInit {
+  title = 'GimmiFront';
+  theme: string = 'dark';
+  isLogged: boolean = false;
+
+  constructor(public themeService: ThemeService, private userService : UserService, private changeDetectorRef : ChangeDetectorRef) {}
+
+  ngOnInit(): void {
+    this.setLoggedUser();
+    this.themeService.setTheme(localStorage.getItem('appTheme') || 'dark');
+    this.themeService.getTheme().subscribe((theme) => {
+      this.theme = theme;
+    });
+  }
+
+  setLoggedUser() : void {
+    this.isLogged = this.userService.isLogged();
+    this.changeDetectorRef.detectChanges();
+  }
+
+
 }

@@ -1,0 +1,49 @@
+<!--<div class="artboard artboard-horizontal phone-6">-->
+<!--  <div class="grid grid-cols-1 divide-y">-->
+<!--    <div>01</div>-->
+<!--    <div>02</div>-->
+<!--    <div>03</div>-->
+<!--  </div>-->
+
+<!--</div>-->
+
+
+<!-- TEST -->
+<!--<div class="flex h-screen overflow-hidden" [attr.data-theme]="currentTheme">-->
+<!--  <div class="w-1/9 flex flex-col justify-center mx-4">-->
+<!--    <ul class="menu bg-base-200 w-56 rounded-box my-4">-->
+<!--      <li><a>Mes amis</a></li>-->
+<!--      <li><a>Invitations</a></li>-->
+<!--      <li><a>Classement</a></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--  <div class="flex-1 mx-4 my-4">-->
+<!--    <app-friend-request-management></app-friend-request-management>-->
+<!--  </div>-->
+
+
+
+<!--</div>-->
+
+
+<div class="flex h-screen overflow-hidden" [attr.data-theme]="currentTheme">
+  <div class="w-1/9 flex flex-col justify-center mx-4">
+    <ul class="menu bg-base-200 w-56 rounded-box my-4">
+      <li>
+        <a class="py-2 px-4" [ngClass]="{'active': currentSection === 'friendlist'}" (click)="currentSection = 'friendlist'">Mes amis</a>
+      </li>
+      <li>
+        <a class="py-2 px-4" [ngClass]="{'active': currentSection === 'invitations'}" (click)="currentSection = 'invitations'">Invitations</a>
+      </li>
+      <li>
+        <a class="py-2 px-4" [ngClass]="{'active': currentSection === 'ranking'}" (click)="currentSection = 'ranking'">Classement</a>
+      </li>
+    </ul>
+  </div>
+  <div class="flex-1 mx-4 my-4">
+    <app-friend-list  *ngIf="currentSection === 'friendlist'" [owner]="currentUserPseudo" ></app-friend-list>
+    <app-friend-request-management *ngIf="currentSection === 'invitations'" [owner]="currentUserPseudo" ></app-friend-request-management>
+     <app-friend-ranking *ngIf="currentSection === 'ranking'"></app-friend-ranking>
+  </div>
+</div>
+

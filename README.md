@@ -1,6 +1,13 @@
-# GimmigameFrontTp
+# Prerequisites (local mode only)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+Run the server available at `https://github.com/GimmiGame/GimmiBack` and follow the instructions in the README.md file.
+
+# GimmiFront
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
+
+## Installation
+Run `npm i` to install all dependencies.
 
 ## Development server
 
